@@ -32,7 +32,11 @@ langchain4j:
         model-name: qwen-max
 
 
+
 logging:
   level:
-    root: debug
-
+    root: info
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/chat_memory_db
