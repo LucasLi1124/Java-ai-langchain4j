@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.llf.java.ai.langchain4j.mapper.AppointmentMapper">
+
+    <select id="isDoctorScheduled" resultType="boolean">
+        SELECT COUNT(*) > 0 FROM appointment
+        WHERE doctor_name = #{doctorName}
+          AND department = #{department}
+          AND date = #{date}
+          AND time = #{time}
+    </select>
+
+    <select id="getDoctorsScheduled" resultType="string">
+        SELECT doctor_name FROM appointment
+        WHERE department = #{department}
+          AND date = #{date}
+          AND time = #{time}
+    </select>
+
+    <select id="countAppointments" resultType="int">
+        SELECT COUNT(*) FROM appointment
+        WHERE doctor_name = #{doctorName}
+          AND department = #{department}
+          AND date = #{date}
+          AND time = #{time}
+    </select>
+</mapper>

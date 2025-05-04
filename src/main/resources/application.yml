@@ -11,6 +11,7 @@ langchain4j:
       #DeepSeek-R1 推理模型
       #langchain4j.open-ai.chat-model.model-name=deepseek-reasoner
 
+
       log-requests: true
       log-responses: true
   #ollama
@@ -30,6 +31,13 @@ langchain4j:
       chat-model:
         api-key: ${DASH_SCOPE_API_KEY}
         model-name: qwen-max
+      embedding-model:
+        api-key: ${DASH_SCOPE_API_KEY}
+        model-name: text-embedding-v3
+      streaming-chat-model:
+        api-key: ${DASH_SCOPE_API_KEY}
+        model-name: qwen-plus
+
 
 
 
@@ -40,3 +48,14 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/chat_memory_db
+  datasource:
+    url: jdbc:mysql://localhost:3306/guiguxiaozhi?
+    username: root
+    password: LlF2024!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    useUnicode: true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    mybatis-plus:
+        configuration:
+          log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
